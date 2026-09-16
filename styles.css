@@ -30,6 +30,10 @@
     height: 10px;
 }
 
+.board-borders{
+    border: 1px solid black;
+}
+
 .etch-container{
     display: flex;
     flex-flow: row wrap;
