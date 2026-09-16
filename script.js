@@ -15,9 +15,12 @@ function buildBoard(height, width){
       let currTile = document.createElement("div");
       currTile.style.width = `${boardWidth/width}px`;
       currTile.style.height = `${boardHeight/height}px`;
+      currTile.addEventListener('mouseover', e =>{
+        e.target.style.backgroundColor = "black"
+      })
       boardContainer.appendChild(currTile);
     }
   }
 }
 
-buildBoard(5,5);
+buildBoard(12,12);
