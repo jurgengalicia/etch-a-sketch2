@@ -21,7 +21,11 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    background-color: red;
+    background-color: white;
+}
+
+.slider{
+    width: 250px;
 }
 
 .board-container div{

@@ -1,15 +1,22 @@
 let boardContainer = document.querySelector(".board-container");
 let borderButton = document.querySelector("#border-button");
-let boardWidth = 500;
-let boardHeight = 500;
+let slider = document.querySelector(".slider");
+let boardWidth = 600;
+let boardHeight = 600;
 boardContainer.style.width = `${boardWidth}px`;
 boardContainer.style.height = `${boardHeight}px`;
 
 borderButton.addEventListener('click', e =>{
-    let eachCell = document.querySelectorAll(".board-container div");
-    eachCell.forEach(x =>{
-      x.classList.contains("board-borders") ? x.classList.remove("board-borders") : x.classList.add("board-borders");
-    })
+  let eachCell = document.querySelectorAll(".board-container div");
+  eachCell.forEach(x =>{
+    x.classList.contains("board-borders") ? x.classList.remove("board-borders") : x.classList.add("board-borders");
+  })
+})
+
+slider.addEventListener('input', e =>{
+  let sliderValue = e.target.value
+  console.log(sliderValue)
+  buildBoard(sliderValue,sliderValue)
 })
 
 
@@ -31,4 +38,4 @@ function buildBoard(height, width){
   }
 }
 
-buildBoard(12,12);
+buildBoard(16,16);
