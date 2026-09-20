@@ -21,7 +21,7 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    background-color: white;
+    background-color: red;
 }
 
 .slider{
@@ -41,6 +41,7 @@
 .etch-container{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     width: 800px;
     height: 800px;
 }

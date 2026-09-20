@@ -1,6 +1,7 @@
 let boardContainer = document.querySelector(".board-container");
 let borderButton = document.querySelector("#border-button");
 let slider = document.querySelector(".slider");
+let sliderInfo = document.querySelector(".slider-info");
 let boardWidth = 600;
 let boardHeight = 600;
 boardContainer.style.width = `${boardWidth}px`;
@@ -13,11 +14,6 @@ borderButton.addEventListener('click', e =>{
   })
 })
 
-slider.addEventListener('input', e =>{
-  let sliderValue = e.target.value
-  console.log(sliderValue)
-  buildBoard(sliderValue,sliderValue)
-})
 
 
 
