@@ -1,7 +1,9 @@
 let boardContainer = document.querySelector(".board-container");
 let borderButton = document.querySelector("#border-button");
+let changeResoButton = document.querySelector(".resolution");
 let slider = document.querySelector(".slider");
-let sliderInfo = document.querySelector(".slider-info");
+let resoInfo = document.querySelector(".reso-info");
+
 let boardWidth = 600;
 let boardHeight = 600;
 boardContainer.style.width = `${boardWidth}px`;
@@ -12,6 +14,16 @@ borderButton.addEventListener('click', e =>{
   eachCell.forEach(x =>{
     x.classList.contains("board-borders") ? x.classList.remove("board-borders") : x.classList.add("board-borders");
   })
+})
+
+changeResoButton.addEventListener('click', e =>{
+  let resolutionSize = Number(prompt("please enter your desired grid size  (x by x squares, 12 - 100):","12"));
+  if(isNaN(resolutionSize) || resolutionSize < 12 || resolutionSize > 100){
+    alert("please enter a number between 12 and 100")
+  } else {
+    buildBoard(resolutionSize,resolutionSize)
+    resoInfo.textContent = `border size:${resolutionSize}`;
+  }
 })
 
 
