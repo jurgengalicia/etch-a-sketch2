@@ -5,10 +5,14 @@ let gradientButton = document.querySelector("#gradient-button");
 let changeResoButton = document.querySelector(".resolution");
 let slider = document.querySelector(".slider");
 let resoInfo = document.querySelector(".reso-info");
+let paletteColor = document.querySelector(".palette-button");
+
 let currResolutionSize = 12;
 let rainbowToggle = 0;
 let gradientToggle = 0;
-let currentGradientNum = 0
+let currentGradientNum = 0;
+
+let currentPickColor = "#000000";
 let gradientList = ["#FFFFFF","#F5F5F5","#EEEEEE","#E0E0E0","#BDBDBD","#9E9E9E","#757575","#616161","#424242","#000000"];
 
 let boardWidth = 600;
@@ -21,6 +25,10 @@ borderButton.addEventListener('click', e =>{
   eachCell.forEach(x =>{
     x.classList.contains("board-borders") ? x.classList.remove("board-borders") : x.classList.add("board-borders");
   })
+})
+
+paletteColor.addEventListener('change', e =>{
+  currentPickColor = e.target.value;
 })
 
 changeResoButton.addEventListener('click', e =>{
@@ -74,7 +82,7 @@ function buildBoard(height, width){
           e.target.style.backgroundColor = gradientList[currentGradientNum];
           currentGradientNum = currentGradientNum == 9 ? 0 : currentGradientNum+1;
         } else {
-          e.target.style.backgroundColor = "black";
+          e.target.style.backgroundColor = currentPickColor;
         }
         
       })
